@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $sections = Section::all()->where('lang_id', '=', Auth::user()->lang);
+        $sections = Section::all()->where('lang_id', '=', Auth::user()->lang_id);
+//        dd($sections->first());
         return view('test.index', ['sections' => $sections]);
     }
 

@@ -15,13 +15,10 @@ class CreateTypeOnesTable extends Migration
     {
         Schema::create('type_ones', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('section_id');
-            $table->string('type');
-            $table->integer('lang_id');
+            $table->integer('lang_id')->unsigned();
             $table->string('image');
             $table->string('sound');
             $table->string('key_true');
-            $table->text('text_body');
             $table->timestamps();
         });
     }

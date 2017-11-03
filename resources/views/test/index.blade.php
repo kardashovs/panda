@@ -80,10 +80,21 @@
     <div class="content">
         @foreach($sections as $section)
             <div>
-                <h2>{{ $section->title }}</h2>
+                <h2>{{ $section->title }} – {{ $section->language->title }}</h2>
                 <ul>
-                    {!! $section->lessons !!}
-                    <li></li>
+                    @foreach($section->lessons as $lesson)
+                        <li>
+                            typeable_type => {!! $lesson->typeable_type !!} <br>
+                            typeable_id => {!! $lesson->typeable_id !!} <br>
+                            section_id => {!! $lesson->section_id !!} <br>
+                            section => {!! $lesson->section->name !!} <br>
+                            language => {!! $lesson->typeable->language->title !!} <br>
+                            image => {!! $lesson->typeable->image !!} <br>
+                            <hr>
+
+                        </li>
+                    @endforeach
+
                 </ul>
             </div>
         @endforeach

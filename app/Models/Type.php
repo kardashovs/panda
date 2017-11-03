@@ -2,19 +2,12 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
 
-
-class Section extends Model
+class Type extends Model
 {
-    function language()
+    public function language()
     {
         return $this->belongsTo('App\Models\Lang', 'lang_id');
-    }
-
-    function lessons()
-    {
-        return $this->hasMany('App\Models\TypeSection');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TypeOneTableSeeder extends Seeder
+class TypeTwoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,34 +11,34 @@ class TypeOneTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('type_ones')->insert([
+        DB::table('type_twos')->insert([
             [
                 'lang_id' => '1',
-                'image' => 'английский урок 1 тип 1',
+                'image' => 'английский урок 1 тип 2',
                 'sound' => 'music',
                 'key_true' => 'while',
             ],
             [
                 'lang_id' => '1',
-                'image' => 'английский урок 2 тип 1',
+                'image' => 'английский урок 2 тип 2',
                 'sound' => 'music',
                 'key_true' => 'while',
             ],
             [
                 'lang_id' => '2',
-                'image' => 'французский урок 1 тип 1',
+                'image' => 'французский урок 1 тип 2',
                 'sound' => 'music',
                 'key_true' => 'while',
             ],
             [
                 'lang_id' => '2',
-                'image' => 'французский урок 2 тип 1',
+                'image' => 'французский урок 2 тип 2',
                 'sound' => 'music',
                 'key_true' => 'while',
             ],
             [
                 'lang_id' => '3',
-                'image' => 'немецкий урок 1 тип 1',
+                'image' => 'немецкий урок 1 тип 2',
                 'sound' => 'music',
                 'key_true' => 'while',
             ],

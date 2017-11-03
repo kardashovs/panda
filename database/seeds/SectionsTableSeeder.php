@@ -13,33 +13,33 @@ class SectionsTableSeeder extends Seeder
     {
         DB::table('sections')->insert([
             [
-                'name' => 'section-one',
+                'name' => 'level-1',
                 'lang_id' => '1',
-                'title' => 'Block One',
+                'title' => 'Level 1',
                 'sort' => 1
             ],
             [
-                'name' => 'section-two',
+                'name' => 'level-2',
                 'lang_id' => '1',
-                'title' => 'Block Two',
+                'title' => 'Level 2',
                 'sort' => 2
             ],
             [
-                'name' => 'franch-one',
+                'name' => 'niveau-1',
                 'lang_id' => '2',
-                'title' => 'Block Franch One',
+                'title' => 'niveau 1',
                 'sort' => 1
             ],
             [
-                'name' => 'franch-two',
+                'name' => 'niveau-2',
                 'lang_id' => '2',
-                'title' => 'Block Franch Two',
-                'sort' => 1
+                'title' => 'niveau 2',
+                'sort' => 2
             ],
             [
-                'name' => 'deugch-one',
+                'name' => 'stufe-1',
                 'lang_id' => '3',
-                'title' => 'Block Deutch One',
+                'title' => 'Stufe 1',
                 'sort' => 1
             ],
 

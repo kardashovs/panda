@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class TypeOne extends Type
+class TypeTwo extends Type
 {
 
 }

@@ -25,6 +25,26 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('lang') ? ' has-error' : '' }}">
+                            <label for="lang" class="col-md-4 control-label">Language</label>
+
+                            <div class="col-md-6">
+
+                                <select class="form-control" name="lang" id="lang" required>
+                                    <option value="{{ old('lang') }}">{{ old('lang') }}</option>
+                                    <option value="1">English</option>
+                                    <option value="2">Franch</option>
+                                    <option value="3">Deutch</option>
+                                </select>
+
+                                @if ($errors->has('lang'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lang') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
