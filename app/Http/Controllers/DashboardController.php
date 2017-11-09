@@ -26,6 +26,13 @@ class DashboardController extends Controller
 
         foreach($sections as $section)
         {
+            $section->raiting = 0;
+            if($section->lessons->count() > 0)
+            {
+                $section->raiting = round((count(Auth::user()->lessons->where('section_id', '=', $section->id))*100)
+                    /$section->lessons->count());
+            }
+
             foreach($section->lessons as $lesson)
             {
                 foreach($lesson->users as $user)

@@ -13,6 +13,24 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css">
+    <style>
+        .raiting {
+            position: relative;
+            width: 300px;
+            height: 15px;
+            border-radius: 5px;
+            background:#BCC4CE;
+            z-index: 1;
+        }
+        .raiting .bar {
+            position: absolute;
+            z-index: -1;
+            height:15px;
+            width: 0%;
+            border-radius: 5px;
+            background: #ADF66B;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

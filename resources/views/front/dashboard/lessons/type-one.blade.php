@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default" style="border: 0; box-shadow: none;padding: 20px;">
                     <div class="panel-heading"
-                         style="text-align: center; text-transform: uppercase;font-weight: bold;border: 0;
+                         style="text-align: left; text-transform: uppercase;font-weight: bold;border: 0;
                          background:none;">
                         Dashboard
                     </div>

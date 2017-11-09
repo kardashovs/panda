@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default" style="border: 0; background:none;box-shadow: none">
                     <div class="panel-heading" style="text-align: center; text-transform: uppercase;font-weight: bold;border: 0; background:none;">
                         Training blocks
@@ -20,7 +20,17 @@
 
                         @foreach($sections as $section)
                             <div style=" margin-bottom: 20px; padding: 10px; background:#fff;">
-                                <h3>{{ $section->title }}</h3>
+                                <div style="display: flex; justify-content: space-between">
+                                    <h3>{{ $section->title }}</h3>
+                                    <div>
+                                        <div style="padding-top: 10px; text-align: right;color: #95C5FF">
+                                            {{ $section->raiting }} %
+                                        </div>
+                                        <div class="raiting">
+                                            <div class="bar" style="width: {{ $section->raiting }}%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <ul style="margin: 0;padding: 0;">
 
                                     @foreach($section->lessons as $lesson)
