@@ -35,7 +35,7 @@ class TypeSectionsTableSeeder extends Seeder
             [
                 'typeable_id' => '3',
                 'typeable_type' => 'App\Models\TypeOne',
-                'section_id' => '3',
+                'section_id' => '1',
             ],
             [
                 'typeable_id' => '4',
@@ -45,7 +45,7 @@ class TypeSectionsTableSeeder extends Seeder
             [
                 'typeable_id' => '3',
                 'typeable_type' => 'App\Models\TypeTwo',
-                'section_id' => '3',
+                'section_id' => '1',
             ],
             [
                 'typeable_id' => '4',

@@ -31,22 +31,37 @@
                         <div>
                             <form method="POST" action="{{ route('dashboard.lesson.complete', [$typeSection->id]) }}">
                                 {{ csrf_field() }}
-                                <button style="" name="result" type="submit" value="dog">Dog</button>
-                                <button name="result" type="submit" value="cat">Cat</button>
-                                <button name="result" type="submit" value="apple">Apple</button>
-                                <button name="result" type="submit" value="table">Table</button>
+                                <center>
+                                    <button style="background:#95C5FF;border: 2px solid #F2F5F8;border-radius: 5px;
+                                    color: #fff;padding: 7px 15px;"
+                                            name="result"
+                                            type="submit"
+                                            value="dog">Dog</button>
+                                    <button style="background:#95C5FF;border: 2px solid #F2F5F8;border-radius: 5px;
+                                    color: #fff;padding: 7px 15px;" name="result" type="submit" value="cat">Cat</button>
+                                    <button style="background:#95C5FF;border: 2px solid #F2F5F8;border-radius: 5px;
+                                    color: #fff;padding: 7px 15px;" name="result" type="submit" value="apple">Apple</button>
+                                    <button style="background:#95C5FF;border: 2px solid #F2F5F8;border-radius: 5px;
+                                    color: #fff;padding: 7px 15px;" name="result" type="submit" value="table">Table</button>
+                                </center>
                             </form>
                         </div>
-                        <br>
-                        <div>
-                            @if($nextLesson)
-                                <a href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
-                                    Продолжить
-                                </a>
-                            @endif
-                        </div>
-
                     </div>
+
+                </div>
+                <div style="text-align: right; background:#95C5FF;padding: 20px;">
+                    @if($nextLesson)
+                        <a style="color: #fff;padding: 8px 20px;border-radius: 30px;border: 1px solid #fff;
+                        margin-right: 30px"
+                           href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
+                            Пропустить
+                        </a>
+                        <a style="background:#fff;color: #95C5FF;padding: 9px 20px;border-radius: 30px"
+                                href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
+                            Продолжить
+                        </a>
+
+                    @endif
                 </div>
             </div>
         </div>

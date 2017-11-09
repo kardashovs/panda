@@ -15,7 +15,6 @@ class CreateTypeTwosTable extends Migration
     {
         Schema::create('type_twos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('lang_id')->unsigned();
             $table->string('image');
             $table->string('sound');
             $table->string('key_true');

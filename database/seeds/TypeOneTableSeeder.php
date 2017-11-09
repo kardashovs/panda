@@ -18,22 +18,22 @@ class TypeOneTableSeeder extends Seeder
                 'key_true' => 'dog',
             ],
             [
-                'image' => 'английский урок 2 тип 1',
+                'image' => 'images/cat.jpg',
                 'sound' => 'music',
                 'key_true' => 'cat',
             ],
             [
-                'image' => 'французский урок 1 тип 1',
+                'image' => 'images/table.jpg',
                 'sound' => 'music',
                 'key_true' => 'table',
             ],
             [
-                'image' => 'французский урок 2 тип 1',
+                'image' => 'images/apple.jpg',
                 'sound' => 'music',
                 'key_true' => 'apple',
             ],
             [
-                'image' => 'немецкий урок 1 тип 1',
+                'image' => 'images/cat.jpg',
                 'sound' => 'music',
                 'key_true' => 'cat',
             ],
