@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function lang()
+    {
+        return $this->belongsTo('App\Models\Lang');
+    }
+
+    public function lessons()
+    {
+        return $this->belongsToMany('App\Models\TypeSection', 'lesson_user');
+    }
+
+    public function scopeLessonCount($query)
+    {
+        return $query->where('votes', '>', 100);
+    }
+
 }

@@ -15,4 +15,10 @@ class TypeSection extends Model
     {
         return $this->belongsTo('App\Models\Section');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'lesson_user');
+    }
+
 }

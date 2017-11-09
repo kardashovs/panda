@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css">
 </head>
 <body>
     <div id="app">
@@ -28,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ route('dashboard') }}">
+                        <img src="{{ asset('images/logo.png') }}" alt="">
                     </a>
                 </div>
 
@@ -47,8 +48,30 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-bottom:0;text-align: center">
+                                    <img src="{{asset(Auth::user()->lang->image)}}" alt="" style="max-width: 30px;padding: 0; margin: 0"><br>
+                                    <span style="line-height:30px">{{ Auth::user()->lang->title }} <br></span>
+                                    <span class="caret" style="vertical-align: top;"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    @foreach($languages->where('id', '<>', Auth::user()->lang->id) as $lang)
+                                    <li>
+                                        <a href="#{{$lang->name}}" onclick="event.preventDefault();
+                                                     document.getElementById('language-{{ $lang->id }}').submit();">
+                                            <img src="{{asset($lang->image)}}" alt="" style="max-width: 30px;padding: 0; margin: 0"> {{ $lang->title }}
+                                        </a>
+
+                                        <form id="language-{{ $lang->id }}" action="{{ route('dashboard.lang.edit', [ $lang->id ]) }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <img src="{{ asset(Auth::user()->photo) }}" alt=""> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

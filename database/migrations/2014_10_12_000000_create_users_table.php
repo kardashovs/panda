@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('lang_id')->nullable()->unsigned();
+            $table->string('photo')->default('assets/images/users/empty.png');
             $table->rememberToken();
             $table->timestamps();
         });

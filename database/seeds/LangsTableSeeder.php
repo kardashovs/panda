@@ -15,14 +15,17 @@ class LangsTableSeeder extends Seeder
             [
                 'name' => 'en',
                 'title' => 'English',
+                'image' => 'assets/images/flags/en.png'
             ],
             [
                 'name' => 'fr',
                 'title' => 'Franch',
+                'image' => 'assets/images/flags/fr.png'
             ],
             [
                 'name' => 'de',
                 'title' => 'Deutch',
+                'image' => 'assets/images/flags/de.png'
             ],
         ]);
     }

@@ -19,6 +19,10 @@ class ComposerServiceProvider extends ServiceProvider
             'front.include.menu', 'App\Http\ViewComposers\MenuComposer'
         );
 
+        View::composer(
+            'layouts.app', 'App\Http\ViewComposers\LangComposer'
+        );
+
     }
 
     /**

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Section;
+use App\Models\Lang;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -21,8 +23,22 @@ class DashboardController extends Controller
     public function index()
     {
         $sections = Section::all()->where('lang_id', '=', Auth::user()->lang_id);
-//        dd($sections->first());
-        return view('test.index', ['sections' => $sections]);
+
+        foreach($sections as $section)
+        {
+            foreach($section->lessons as $lesson)
+            {
+                foreach($lesson->users as $user)
+                {
+                    if($user->id == Auth::user()->id)
+                    {
+                        $lesson->complete = true;
+                    }
+                }
+            }
+        }
+
+        return view('front.dashboard.index', ['sections' => $sections]);
     }
 
     /**
@@ -43,7 +59,7 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -52,9 +68,12 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function edit($id, User $user)
     {
-        //
+        $user = $user::find(Auth::user()->id);
+        $user->lang_id = $id;
+        $user->save();
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -63,9 +82,9 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function show($id)
     {
-        //
+
     }
 
     /**
