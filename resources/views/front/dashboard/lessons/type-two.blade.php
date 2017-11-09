@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
 
@@ -19,14 +19,20 @@
                             </div>
                         @endif
                         <div>
-                            {{ $lesson->key_true }}
+                            <center>
+                                <img src="{{ asset( $lesson->image ) }}" alt="" style="max-width: 300px;">
+                            </center>
                         </div>
                             <br>
                         <div>
-                            <form method="POST" action="{{ route('dashboard.lesson.complete', [$typeSection->id]) }}">
-                                {{ csrf_field() }}
-                                <input name="result" type="text"></input>
-                            </form>
+                            <center>
+                                <form method="POST" action="{{ route('dashboard.lesson.complete', [$typeSection->id]) }}">
+                                    {{ csrf_field() }}
+                                    <input name="result" type="text" style="border: 0;border-bottom: 2px solid #21FF00;
+                                    border-radius: 5px;background:#C4C4C4;
+"></input>
+                                </form>
+                            </center>
                         </div>
                             <br>
                         <div>
@@ -38,6 +44,20 @@
                         </div>
 
                     </div>
+                </div>
+                <div style="text-align: right; background:#95C5FF;padding: 20px;">
+                    @if($nextLesson)
+                        <a style="color: #fff;padding: 8px 20px;border-radius: 30px;border: 1px solid #fff;
+                        margin-right: 30px"
+                           href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
+                            Пропустить
+                        </a>
+                        <a style="background:#fff;color: #95C5FF;padding: 9px 20px;border-radius: 30px"
+                           href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
+                            Продолжить
+                        </a>
+
+                    @endif
                 </div>
             </div>
         </div>
