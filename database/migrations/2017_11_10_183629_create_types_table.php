@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeOnesTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateTypeOnesTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_ones', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image');
-            $table->string('sound');
-            $table->string('key_true');
-            $table->integer('type_id')->default('1')->unsigned();
+            $table->string('title');
+            $table->string('description');
+            $table->string('template');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateTypeOnesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_ones');
+        Schema::dropIfExists('types');
     }
 }

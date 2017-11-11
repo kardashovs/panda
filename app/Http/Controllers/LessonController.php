@@ -69,8 +69,8 @@ class LessonController extends Controller
             endif;
         endforeach;
 
-        if (View::exists("front.dashboard.lessons.".$typeSection->typeable->template)) {
-            return view("front.dashboard.lessons.".$typeSection->typeable->template, ['lesson'=>$lesson, 'typeSection' => $typeSection, 'nextLesson'=> $nextLesson]);
+        if (View::exists("front.dashboard.lessons.".$typeSection->typeable->type->template)) {
+            return view("front.dashboard.lessons.".$typeSection->typeable->type->template, ['lesson'=>$lesson, 'typeSection' => $typeSection, 'nextLesson'=> $nextLesson]);
         }
 
         return view("front.dashboard.lessons.no-type");

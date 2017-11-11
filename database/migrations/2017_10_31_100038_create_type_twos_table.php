@@ -18,7 +18,7 @@ class CreateTypeTwosTable extends Migration
             $table->string('image');
             $table->string('sound');
             $table->string('key_true');
-            $table->string('template')->default('type-two');
+            $table->integer('type_id')->default('2')->unsigned();
             $table->timestamps();
         });
 

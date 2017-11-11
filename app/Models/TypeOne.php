@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class TypeOne extends Type
+class TypeOne extends Types
 {
     public function scopeTemplate()
     {
