@@ -19,6 +19,7 @@
 
 
                         @foreach($sections as $section)
+                            @if($section->lessons->count() > 0)
                             <div style=" margin-bottom: 20px; padding: 10px; background:#fff;">
                                 <div style="display: flex; justify-content: space-between">
                                     <h3>{{ $section->title }}</h3>
@@ -48,6 +49,7 @@
                                     @endforeach
                                 </ul>
                             </div>
+                            @endif
                         @endforeach
                     </div>
                 </div>

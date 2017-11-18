@@ -4,9 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
-
+                <div class="panel panel-default" style="border: 0; box-shadow: none;padding: 20px;">
+                    <div class="panel-heading">
+                        <div><strong>{{ $lesson->type->title }}</strong></div>
+                        <div>{{ $lesson->type->description }}</div>
+                    </div>
                     <div class="panel-body">
                         @if (session('status'))
                             <div class="alert alert-success">
@@ -33,14 +35,6 @@
 "></input>
                                 </form>
                             </center>
-                        </div>
-                            <br>
-                        <div>
-                            @if($nextLesson)
-                            <a href="{{ route('dashboard.lesson', [$nextLesson->id, $nextLesson->typeable_type, $nextLesson->typeable_id]) }}">
-                                Продолжить
-                            </a>
-                            @endif
                         </div>
 
                     </div>
